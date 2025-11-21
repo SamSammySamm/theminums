@@ -1,155 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Minums | Your Daily Refreshment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #3fbf4a;   /* Main Branding Green */
+            --darkgreen: #2c8f36;
+            --light: #f6fff7;
+            --text: #222;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+        }
+
+        /* HEADER / NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--green);
+        }
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        nav .btn {
+            background-color: var(--green);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: white;
+        }
+        nav .btn:hover {
+            background-color: var(--darkgreen);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 80px 50px;
+        }
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-text h1 {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+            color: var(--darkgreen);
+        }
+        .hero-text p {
+            font-size: 18px;
+            margin-top: 15px;
+            max-width: 500px;
+        }
+        .hero-text .cta-btn {
+            display: inline-block;
+            background: var(--green);
+            padding: 14px 30px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+        .hero-text .cta-btn:hover {
+            background: var(--darkgreen);
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: center;
+            min-width: 280px;
+        }
+        .hero-img img {
+            width: 80%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* MENU SECTION */
+        .menu-section {
+            padding: 70px 50px;
+            text-align: center;
+        }
+        .menu-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--darkgreen);
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .menu-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .menu-item h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .menu-item p {
+            margin: 8px 0 0;
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--darkgreen);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header class="main-header">
-        <div class="logo">
-            <a href="index.html"><h1>The Minums <span>🥤</span></h1></a>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">The Minums</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+            <a class="btn" href="https://www.instagram.com/the.minums" target="_blank">Instagram</a>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="listing.html">Our Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Locations</a></li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <a href="cart.html" class="cart-link" aria-label="View shopping cart">
-                <span class="icon">🛒</span> Cart (<span id="cart-item-count">0</span>)
-            </a>
-            <a href="admin.html" class="admin-link" aria-label="Access admin panel">
-                <span class="icon">⚙️</span> Admin
-            </a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Your Daily Refreshment</h1>
+            <p>
+                Fresh, flavourful and crafted with love —  
+                The Minums brings you refreshing beverages made for your day.
+            </p>
+            <a class="cta-btn" href="#menu">Explore Menu</a>
         </div>
-    </header>
 
-    <main>
-        
-        <section class="hero-section minums-hero">
-            <div class="hero-content">
-                <h2>Sip, Smile, Repeat.</h2>
-                <p>Discover handcrafted refreshments, delivered fresh to your door. <br>Your perfect day starts here.</p>
-                <a href="listing.html" class="cta-button primary-btn">Explore Our Menu</a>
+        <div class="hero-img">
+            <img src="your-image-here.jpg" alt="The Minums Drink" />
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+        <h2>Our Favourites</h2>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="drink1.jpg" alt="Drink">
+                <h3>Signature Green Tea</h3>
+                <p>Fresh, bold and energizing.</p>
             </div>
-            </section>
 
-        <section class="featured-products section-spacing">
-            <h3>✨ Our Signature Sips</h3>
-            <div class="product-grid">
-                <article class="product-card">
-                    <figure>
-                        <img src="images/minums-coffee.jpg" alt="Signature Cold Brew">
-                        <figcaption>Rich & Invigorating</figcaption>
-                    </figure>
-                    <h4>Signature Cold Brew</h4>
-                    <p class="description">Strong, smooth, and perfectly chilled for your daily boost.</p>
-                    <p class="price">$5.50</p>
-                    <a href="detail.html" class="view-details button-secondary">View Details</a>
-                    <button class="add-to-cart-btn button-primary">Add to Cart</button>
-                </article>
-
-                <article class="product-card">
-                    <figure>
-                        <img src="images/minums-smoothie.jpg" alt="Tropical Sunset Smoothie">
-                        <figcaption>Sweet & Refreshing</figcaption>
-                    </figure>
-                    <h4>Tropical Sunset Smoothie</h4>
-                    <p class="description">A vibrant blend of exotic fruits, sunshine in a glass.</p>
-                    <p class="price">$6.00</p>
-                    <a href="detail.html" class="view-details button-secondary">View Details</a>
-                    <button class="add-to-cart-btn button-primary">Add to Cart</button>
-                </article>
-
-                <article class="product-card">
-                    <figure>
-                        <img src="images/minums-tea.jpg" alt="Calming Chamomile Tea">
-                        <figcaption>Soothing & Relaxing</figcaption>
-                    </figure>
-                    <h4>Calming Chamomile Tea</h4>
-                    <p class="description">Natural and soothing, perfect for winding down after a long day.</p>
-                    <p class="price">$4.00</p>
-                    <a href="detail.html" class="view-details button-secondary">View Details</a>
-                    <button class="add-to-cart-btn button-primary">Add to Cart</button>
-                </article>
+            <div class="menu-item">
+                <img src="drink2.jpg" alt="Drink">
+                <h3>Tropical Punch</h3>
+                <p>Fruity and refreshing.</p>
             </div>
-        </section>
 
-        <section class="value-proposition minums-usp section-spacing">
-            <h3>Why Choose The Minums?</h3>
-            <div class="usp-grid">
-                <div class="usp-item">
-                    <span class="usp-icon">🌿</span>
-                    <h4>Fresh Ingredients</h4>
-                    <p>We source only the finest, natural ingredients for every sip.</p>
-                </div>
-                <div class="usp-item">
-                    <span class="usp-icon">🛵</span>
-                    <h4>Fast & Reliable Delivery</h4>
-                    <p>Your favorite drinks, quickly and carefully delivered to your door.</p>
-                </div>
-                <div class="usp-item">
-                    <span class="usp-icon">♻️</span>
-                    <h4>Eco-Friendly Packaging</h4>
-                    <p>Committed to sustainability with every eco-conscious container.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="call-to-action section-spacing">
-            <div class="cta-banner">
-                <h3>Ready for a Refreshing Experience?</h3>
-                <p>Join The Minums family and redefine your daily hydration.</p>
-                <a href="listing.html" class="cta-button primary-btn">Order Now</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h3>The Minums</h3>
-                <p>Your Daily Refreshment, Delivered.</p>
-            </div>
-            <div class="footer-links-group">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="listing.html">Our Menu</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links-group">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Delivery Info</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Connect With Us</h4>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#" aria-label="Instagram"><img src="images/icon-instagram.svg" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="images/icon-twitter.svg" alt="Twitter"></a>
-                </div>
+            <div class="menu-item">
+                <img src="drink3.jpg" alt="Drink">
+                <h3>Classic Lemonade</h3>
+                <p>Simple, sweet & zesty.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 The Minums. All rights reserved.</p>
-        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        © 2025 The Minums — Keep Sipping Fresh ✨
     </footer>
+
 </body>
 </html>
-
